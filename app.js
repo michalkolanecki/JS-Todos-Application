@@ -15,5 +15,9 @@ const createTemplate = addTask => {
 addForm.addEventListener('submit', e => {
     e.preventDefault();
     const addTask = addForm.add.value.trim();
-    createTemplate(addTask);
+
+    if(addTask.length) {
+        createTemplate(addTask);
+        addForm.reset();
+    }
 });
